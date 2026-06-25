@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Wanderly</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <i class="fa-solid fa-compass"></i>
+        <span>Wanderly</span>
+      </a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact Us</a>
+        <a href="thankyou.html"></a>
+      </nav>
+
+      <a href="contact.html" class="btn btn--primary navbar__cta">Plan a Trip</a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ THANK YOU SECTION ============ -->
+  <section class="thanks">
+    <div class="container">
+
+      <div class="thanks__header" data-animate="fade-up">
+        <div class="thanks__icon"><i class="fa-solid fa-circle-check"></i></div>
+        <h1>Thank you, <span id="thanksName">there</span>!</h1>
+        <p>We've received your message. Here's a copy of what you submitted:</p>
+      </div>
+
+      <!-- The table is built and filled in by contact.js using JavaScript.
+           If someone opens this page directly (without submitting the form),
+           we show a friendly message instead of an empty table. -->
+      <div class="thanks__table-wrap" data-animate="fade-up" data-delay="1">
+        <table class="thanks__table" id="detailsTable">
+          <tbody id="detailsTableBody">
+            <!-- Rows get added here by JavaScript -->
+          </tbody>
+        </table>
+
+        <p class="thanks__empty" id="emptyMessage" style="display: none;">
+          No submission found. Please fill out the
+          <a href="contact.html">contact form</a> first.
+        </p>
+      </div>
+
+      <div class="thanks__actions" data-animate="fade-up" data-delay="2">
+        <a href="index.html" class="btn btn--secondary">
+          <i class="fa-solid fa-house"></i> Back to Home
+        </a>
+        <a href="contact.html" class="btn btn--primary">
+          <i class="fa-solid fa-pen"></i> Submit Another Message
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <div>
+    <h2 id="FullName"></h2>
+    <p id="usermail"></p>
+    <p id="userphone"></p>
+    <p id="usersubject"></p>
+    <p id="userdestination"></p>
+    <p id="userMsg"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+      document.getElementById("FullName").innerHTML =
+      params.get("FullName");
+
+      document.getElementById("usermail").innerHTML =
+      params.get("Email");
+
+      document.getElementById("userphone").innerHTML =
+      params.get("Phone");
+
+      document.getElementById("usersubject").innerHTML =
+      params.get("Subject");
+
+      document.getElementById("userdestination").innerHTML =
+      params.get("Destination");
+
+      document.getElementById("userMsg").innerHTML =
+      params.get("Message");
+  </script>
+
+
+
+<h2 id="userName"></h2>
+<p id="userEmail"></p>
+<p id="userMessage"></p>
+
+<script>
+const params1 = new URLSearchParams(window.location.search);
+
+document.getElementById("userName").innerHTML =
+    params1.get("name");
+
+document.getElementById("userEmail").innerHTML =
+    params1.get("email");
+
+document.getElementById("userMessage").innerHTML =
+    params1.get("message");
+</script>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo">
+          <i class="fa-solid fa-compass"></i>
+          <span>Wanderly</span>
+        </a>
+        <p>Your trip, planned right.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Follow</h4>
+        <div class="footer__socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer__bottom">© 2026 Wanderly. Made for learning &amp; portfolio purposes.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="thank-you.js"></script>
+</body>
+</html>

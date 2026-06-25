@@ -1,0 +1,343 @@
+/* ---------- 1. RESET & VARIABLES ---------- */
+
+/* =====================================================
+   ABOUT US PAGE — STYLES SPECIFIC TO THIS PAGE
+   Beginner note: shared things (navbar, footer, buttons,
+   section-title, scroll-animation) already live in
+   style.css. This file only has NEW sections that don't
+   exist on the homepage.
+===================================================== */
+
+/* ---------- PAGE HERO (smaller version of homepage hero, no search card) ---------- */
+.page-hero {
+    background-image: url("bgimg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 24px 100px;
+  overflow: hidden;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1530521954074-e9b4259c6da9?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(27, 45, 40, 0.6) 0%,
+    rgba(27, 45, 40, 0.45) 50%,
+    rgba(250, 250, 247, 1) 100%
+  );
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 720px;
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.12;
+  margin-bottom: 18px;
+}
+
+.page-hero__subtitle {
+  font-size: 1rem;
+  color: rgba(26, 14, 14, 0.85);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ---------- OUR STORY ---------- */
+.story {
+  padding: 100px 0;
+}
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.story__image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.story__text p {
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+  font-size: 0.98rem;
+}
+
+/* ---------- MISSION & VISION ---------- */
+.mv {
+  padding: 80px 0;
+  background: var(--color-primary-light);
+}
+
+.mv__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.mv-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  box-shadow: var(--shadow-soft);
+}
+
+.mv-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+
+.mv-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.mv-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- STATS / ACHIEVEMENTS ---------- */
+.stats {
+  background: var(--color-primary);
+  padding: 90px 0;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-card__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- TEAM ---------- */
+.team {
+  padding: 100px 0;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+}
+
+.team-card img {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+}
+
+.team-card h3 {
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.team-card span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.team-card__socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.team-card__socials a:hover {
+  color: var(--color-primary);
+}
+
+/* ---------- FUTURE PLANS (timeline) ---------- */
+.future {
+  padding: 100px 0;
+  background: var(--color-primary-light);
+}
+
+.future__timeline {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* The vertical dotted line connecting each year — echoes the homepage's
+   "route line" idea, but vertical here since it's a timeline, not a map. */
+.future__timeline::before {
+  content: "";
+  position: absolute;
+  left: 39px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background-image: linear-gradient(var(--color-primary) 60%, transparent 40%);
+  background-size: 2px 14px;
+  background-repeat: repeat-y;
+  opacity: 0.4;
+}
+
+.future-item {
+  position: relative;
+  display: flex;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.future-item:last-child {
+  margin-bottom: 0;
+}
+
+.future-item__marker {
+  flex: 0 0 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.future-item__body {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+  flex: 1;
+}
+
+.future-item__body h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.future-item__body p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- CTA BAND override for About page (no form, just a button) ---------- */
+.cta-band__inner a.btn {
+  flex-shrink: 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .story__image img {
+    height: 280px;
+  }
+  .mv__grid {
+    grid-template-columns: 1fr;
+  }
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+  .future-item {
+    gap: 16px;
+  }
+  .future-item__marker {
+    flex: 0 0 60px;
+    height: 60px;
+    font-size: 0.85rem;
+  }
+  .future__timeline::before {
+    left: 29px;
+  }
+}

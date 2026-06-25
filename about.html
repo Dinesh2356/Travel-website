@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Wanderly</title>
+
+  <!-- Google Fonts: Fraunces (headline) + Inter (body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- style.css = shared styles (navbar, footer, buttons) used on every page -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- about.css = styles that only belong to this page -->
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR (same on every page) ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <i class="fa-solid fa-compass"></i>
+        <span>Wanderly</span>
+      </a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <a href="contact.html" class="btn btn--primary navbar__cta">Plan a Trip</a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section  class="page-hero">
+    
+    <div class="page-hero__bg"></div>
+    <div class="page-hero__overlay"></div>
+
+    <div class="container page-hero__content">
+        
+      <p class="hero__eyebrow" data-animate="fade-up">Est. 2019 · Based in Mumbai, India</p>
+      <h1 class="page-hero__title" data-animate="fade-up" data-delay="1">
+        We're building the trip <br />
+        you'll <span class="hero__title-accent">actually remember.</span>
+      </h1>
+      <p class="page-hero__subtitle" data-animate="fade-up" data-delay="2">
+        Wanderly started as a frustration with clunky booking sites —
+        and grew into a team obsessed with making travel feel simple again.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ OUR STORY ============ -->
+  <section class="story">
+    <div class="container story__grid">
+      <div class="story__image" data-animate="fade-up">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Wanderly team planning trips together" />
+      </div>
+
+      <div class="story__text" data-animate="fade-up" data-delay="1">
+        <p class="section-eyebrow">Our story</p>
+        <h2 class="section-title">From a frustrating layover to a full-time obsession</h2>
+        <p>
+          Wanderly began in 2019 when our founders, stuck on a delayed layover,
+          spent three hours trying to rebook a hotel through a clunky app that
+          kept timing out. They figured there had to be a better way — and built it.
+        </p>
+        <p>
+          What started as a weekend side-project comparing hotel prices across
+          three cities has grown into a platform used by travelers across India
+          and beyond, built by a small team that still personally tests every
+          feature before it ships.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MISSION & VISION ============ -->
+  <section class="mv">
+    <div class="container">
+      <p class="section-eyebrow">What drives us</p>
+      <h2 class="section-title">Mission &amp; vision</h2>
+
+      <div class="mv__grid">
+        <div class="mv-card" data-animate="fade-up">
+          <div class="mv-card__icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Our Mission</h3>
+          <p>
+            To make booking travel so simple and transparent that planning
+            a trip feels as good as taking one — no hidden fees, no confusing
+            steps, no guesswork.
+          </p>
+        </div>
+
+        <div class="mv-card" data-animate="fade-up" data-delay="1">
+          <div class="mv-card__icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Our Vision</h3>
+          <p>
+            A world where anyone, anywhere, can discover and book a place to
+            stay in under a minute — with the confidence that comes from real
+            reviews and real prices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACHIEVEMENTS / STATS ============ -->
+  <section class="stats">
+    <div class="container">
+      <p class="section-eyebrow" style="color: rgba(255,255,255,0.7);">Milestones so far</p>
+      <h2 class="section-title" style="color:#fff;">Numbers we're proud of</h2>
+
+      <div class="stats__grid">
+        <div class="stat-card" data-animate="fade-up">
+          <span class="stat-card__number" data-count="2000">500</span>
+          <p>Destinations listed</p>
+        </div>
+
+        <div class="stat-card" data-animate="fade-up" data-delay="1">
+          <span class="stat-card__number" data-count="150000">450</span>
+          <p>Happy travelers</p>
+        </div>
+
+        <div class="stat-card" data-animate="fade-up" data-delay="2">
+          <span class="stat-card__number" data-count="48">65</span>
+          <p>Countries covered</p>
+        </div>
+
+        <div class="stat-card" data-animate="fade-up" data-delay="3">
+          <span class="stat-card__number" data-count="98">100%</span>
+          <p>% satisfaction rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section class="team">
+    <div class="container">
+      <p class="section-eyebrow">The people behind Wanderly</p>
+      <h2 class="section-title">Meet the team</h2>
+
+      <div class="team__grid">
+        <div class="team-card" data-animate="fade-up">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Arjun Mehta" />
+          <h3>Arjun Mehta</h3>
+          <span>Co-Founder &amp; CEO</span>
+          <p>Ex-product lead obsessed with removing friction from booking flows.</p>
+          <div class="team-card__socials">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card" data-animate="fade-up" data-delay="1">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="Riya Sharma" />
+          <h3>Riya Sharma</h3>
+          <span>Co-Founder &amp; Head of Design</span>
+          <p>Believes good travel UX should feel invisible — and fights for it daily.</p>
+          <div class="team-card__socials">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card" data-animate="fade-up" data-delay="2">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80" alt="Sneha Kapoor" />
+          <h3>Sneha Kapoor</h3>
+          <span>Head of Customer Support</span>
+          <p>Leads the 24/7 team that makes sure no traveler is ever stuck alone.</p>
+          <div class="team-card__socials">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card" data-animate="fade-up" data-delay="3">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Karan Verma" />
+          <h3>Karan Verma</h3>
+          <span>Head of Engineering</span>
+          <p>Keeps the platform fast, reliable, and quietly running behind the scenes.</p>
+          <div class="team-card__socials">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FUTURE PLANS ============ -->
+  <section class="future">
+    <div class="container">
+      <p class="section-eyebrow">Looking ahead</p>
+      <h2 class="section-title">What we're building next</h2>
+
+      <div class="future__timeline">
+        <div class="future-item" data-animate="fade-up">
+          <div class="future-item__marker">2026</div>
+          <div class="future-item__body">
+            <h3>AI trip planner</h3>
+            <p>A smart assistant that builds a full itinerary from a single sentence — budget, dates, and vibe included.</p>
+          </div>
+        </div>
+
+        <div class="future-item" data-animate="fade-up" data-delay="1">
+          <div class="future-item__marker">2027</div>
+          <div class="future-item__body">
+            <h3>Expand to 80+ countries</h3>
+            <p>Doubling our destination coverage, with a sharp focus on Southeast Asia and the Middle East.</p>
+          </div>
+        </div>
+
+        <div class="future-item" data-animate="fade-up" data-delay="2">
+          <div class="future-item__marker">2028</div>
+          <div class="future-item__body">
+            <h3>Wanderly for groups</h3>
+            <p>Shared trip boards so friends and family can plan, vote, and split costs in one place.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Want to be part of the journey?</h2>
+        <p>We're always looking for people who care about travel done right.</p>
+      </div>
+      <a href="contact.html" class="btn btn--secondary">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo">
+          <i class="fa-solid fa-compass"></i>
+          <span>Wanderly</span>
+        </a>
+        <p>Your trip, planned right.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Follow</h4>
+        <div class="footer__socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer__bottom">© 2026 Wanderly. Made for learning &amp; portfolio purposes.</p>
+  </footer>
+
+  <script src="script.js"></script>
+ <script src="about.js"></script>
+</body>
+</html>

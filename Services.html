@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Wanderly</title>
+
+  <!-- Google Fonts: Fraunces (headline) + Inter (body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- style.css = shared styles used on every page -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- services.css = styles only for this page -->
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR (same on every page) ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <i class="fa-solid fa-compass"></i>
+        <span>Wanderly</span>
+      </a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <a href="contact.html" class="btn btn--primary navbar__cta">Plan a Trip</a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO BANNER with 3D Globe ============ -->
+  <section class="services-hero">
+    <div class="services-hero__bg"></div>
+    <div class="services-hero__overlay"></div>
+
+    <div class="container services-hero__grid">
+      <div class="services-hero__content">
+        <p class="hero__eyebrow" data-animate="fade-up">What we offer</p>
+        <h1 class="page-hero__title" data-animate="fade-up" data-delay="1">
+          Everything you need <br />
+          for the <span class="hero__title-accent">perfect trip.</span>
+        </h1>
+        <p class="page-hero__subtitle" data-animate="fade-up" data-delay="2" style="margin:0;">
+          From booking a single room to planning a 2-week itinerary across
+          three countries — Wanderly handles the details so you don't have to.
+        </p>
+        <a href="contact.html" class="btn btn--primary" data-animate="fade-up" data-delay="3" style="margin-top:28px; width: fit-content;">
+          Get started <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- 3D Globe canvas mounts here via Three.js (see globe.js) -->
+      <div class="services-hero__globe" id="globeContainer" data-animate="fade-up" data-delay="2">
+        <canvas id="globeCanvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES GRID (3D tilt cards) ============ -->
+  <section class="services-grid-section">
+    <div class="container">
+      <p class="section-eyebrow">Our services</p>
+      <h2 class="section-title">One platform, every part of your trip</h2>
+
+      <div class="services-grid">
+
+        <div class="tilt-card" data-animate="fade-up">
+          <div class="tilt-card__inner">
+            <div class="tilt-card__icon"><i class="fa-solid fa-hotel"></i></div>
+            <h3>Hotel Booking</h3>
+            <p>Search 2,000+ verified hotels and homestays, filter by price, rating, and amenities, and book in under a minute.</p>
+            <a href="index.html#home" class="tilt-card__link">Explore stays <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tilt-card" data-animate="fade-up" data-delay="1">
+          <div class="tilt-card__inner">
+            <div class="tilt-card__icon"><i class="fa-solid fa-plane"></i></div>
+            <h3>Flight Booking</h3>
+            <p>Compare fares across 40+ airlines, set price-drop alerts, and lock in the cheapest seat before it's gone.</p>
+            <a href="contact.html" class="tilt-card__link">Find flights <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tilt-card" data-animate="fade-up" data-delay="2">
+          <div class="tilt-card__icon-wrap">
+          </div>
+          <div class="tilt-card__inner">
+            <div class="tilt-card__icon"><i class="fa-solid fa-suitcase-rolling"></i></div>
+            <h3>Holiday Packages</h3>
+            <p>Pre-built multi-day itineraries with stays, transport, and activities bundled at a single discounted price.</p>
+            <a href="contact.html" class="tilt-card__link">View packages <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tilt-card" data-animate="fade-up">
+          <div class="tilt-card__inner">
+            <div class="tilt-card__icon"><i class="fa-solid fa-car"></i></div>
+            <h3>Car Rentals</h3>
+            <p>Self-drive or chauffeur-driven cars at your destination, ready for pickup the moment you land.</p>
+            <a href="contact.html" class="tilt-card__link">Rent a car <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tilt-card" data-animate="fade-up" data-delay="1">
+          <div class="tilt-card__inner">
+            <div class="tilt-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Travel Insurance</h3>
+            <p>One-tap coverage for medical emergencies, trip cancellations, and lost luggage — starting at ₹99.</p>
+            <a href="contact.html" class="tilt-card__link">Get covered <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tilt-card" data-animate="fade-up" data-delay="2">
+          <div class="tilt-card__inner">
+            <div class="tilt-card__icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>24/7 Support</h3>
+            <p>Real people on chat and call, any hour, any time zone — because plans never wait for business hours.</p>
+            <a href="contact.html" class="tilt-card__link">Talk to us <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="how-it-works">
+    <div class="container">
+      <p class="section-eyebrow">How we works</p>
+      <h2 class="section-title">How booking with Wanderly works</h2>
+
+      <div class="steps">
+        <div class="step" data-animate="fade-up">
+          <span class="step__number">01</span>
+          <h3>Search</h3>
+          <p>Tell us where, when, and how many — we'll surface the best options instantly.</p>
+        </div>
+
+        <div class="step" data-animate="fade-up" data-delay="1">
+          <span class="step__number">02</span>
+          <h3>Compare</h3>
+          <p>Filter by price, rating, and amenities until you find the one that's right.</p>
+        </div>
+
+        <div class="step" data-animate="fade-up" data-delay="2">
+          <span class="step__number">03</span>
+          <h3>Book</h3>
+          <p>Secure checkout, instant confirmation, and free cancellation on most stays.</p>
+        </div>
+
+        <div class="step" data-animate="fade-up" data-delay="3">
+          <span class="step__number">04</span>
+          <h3>Go</h3>
+          <p>Get trip reminders and 24/7 support — then just focus on enjoying it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Not sure which service you need?</h2>
+        <p>Tell us your trip plans and we'll point you to the right one.</p>
+      </div>
+      <a href="contact.html" class="btn btn--secondary">Contact our team</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo">
+          <i class="fa-solid fa-compass"></i>
+          <span>Wanderly</span>
+        </a>
+        <p>Your trip, planned right.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Follow</h4>
+        <div class="footer__socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer__bottom">© 2026 Wanderly. Made for learning &amp; portfolio purposes.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Three.js library, loaded from CDN, needed for the 3D globe -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="globe.js"></script>
+  <script src="services.js"></script>
+</body>
+</html>

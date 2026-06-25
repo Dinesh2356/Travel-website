@@ -1,0 +1,247 @@
+/* =====================================================
+   SERVICES PAGE — STYLES SPECIFIC TO THIS PAGE
+   Beginner note: shared things (navbar, footer, buttons,
+   section-title, scroll-animation) already live in
+   style.css. This file only has NEW sections + the
+   3D tilt-card effect.
+===================================================== */
+
+/* ---------- HERO BANNER (with globe) ---------- */
+.services-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 160px 24px 100px;
+  overflow: hidden;
+}
+
+.services-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+.services-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(20, 36, 31, 0.92) 0%,
+    rgba(20, 36, 31, 0.75) 45%,
+    rgba(20, 36, 31, 0.35) 100%
+  );
+}
+
+.services-hero__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.services-hero__content {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-hero__content .page-hero__title {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.services-hero__content .page-hero__subtitle {
+  text-align: left;
+  margin-left: 0;
+}
+
+.services-hero__content .hero__eyebrow {
+  align-self: flex-start;
+}
+
+/* The box that holds the 3D globe canvas */
+.services-hero__globe {
+  position: relative;
+  width: 100%;
+  height: 420px;
+}
+
+.services-hero__globe canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ---------- SERVICES GRID + 3D TILT CARDS ---------- */
+.services-grid-section {
+  padding: 100px 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* The OUTER card sets up 3D space ("perspective") so the inner
+   card can rotate and look like it's actually tilting in 3D,
+   instead of just stretching flat. */
+.tilt-card {
+  perspective: 1000px;
+}
+
+/* The INNER card is what actually rotates. We rotate THIS element
+   (via inline transform set by JS in services.js) rather than the
+   outer one, so the perspective math stays correct. */
+.tilt-card__inner {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.tilt-card:hover .tilt-card__inner {
+  box-shadow: var(--shadow-strong);
+}
+
+.tilt-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+  /* translateZ pushes this element "forward" in 3D space, so when the
+     card tilts, the icon appears to pop out above the card surface. */
+  transform: translateZ(20px);
+}
+
+.tilt-card__inner h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  transform: translateZ(15px);
+}
+
+.tilt-card__inner p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+  transform: translateZ(10px);
+}
+
+.tilt-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+  transform: translateZ(10px);
+  transition: gap 0.2s ease;
+}
+
+.tilt-card__link:hover {
+  gap: 12px;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.how-it-works {
+  padding: 100px 0;
+  background: var(--color-primary-light);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.step {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.step__number {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .services-hero__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .services-hero__content .page-hero__title,
+  .services-hero__content .page-hero__subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-hero__content .hero__eyebrow {
+    align-self: center;
+  }
+  .services-hero__content a.btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-hero__globe {
+    height: 320px;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .services-hero {
+    padding: 130px 16px 80px;
+  }
+  .services-hero__globe {
+    height: 260px;
+  }
+}

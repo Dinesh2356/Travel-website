@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wanderly — Find your next trip</title>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <a href="thankyou.html"></a>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#home" class="navbar__logo">
+        <i class="fa-solid fa-compass"></i>
+        <span>Wanderly</span>
+      </a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <a href="contact.html" class="btn btn--primary navbar__cta">Plan a Trip</a>
+
+      
+      <button class="navbar__toggle" id="navToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="container hero__content">
+      <p class="hero__eyebrow" data-animate="fade-up">Over 2,000 destinations · 4.8★ average rating</p>
+      <h1 class="hero__title" data-animate="fade-up" data-delay="1">
+        Travel far. <br />
+        Feel <span class="hero__title-accent">at home.</span>
+      </h1>
+      <p class="hero__subtitle" data-animate="fade-up" data-delay="2">
+        Search hotels, homestays, and resorts across the globe — and book
+        the one that feels right, in seconds.
+      </p>
+    </div>
+
+    
+    <div class="search-card" data-animate="fade-up" data-delay="3">
+      <form id="searchForm" class="search-form" novalidate>
+
+        <div class="field">
+          <label for="destination">Destination</label>
+          <div class="field__input-wrap">
+            <i class="fa-solid fa-location-dot field__icon"></i>
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              placeholder="Where are you going?"
+              autocomplete="off"
+            />
+          </div>
+          <span class="field__error" id="destinationError"></span>
+        </div>
+
+        <div class="field">
+          <label for="checkin">Check-in</label>
+          <div class="field__input-wrap">
+            <i class="fa-solid fa-calendar-days field__icon"></i>
+            <input type="date" id="checkin" name="checkin" />
+          </div>
+          <span class="field__error" id="checkinError"></span>
+        </div>
+
+        <div class="field">
+          <label for="checkout">Check-out</label>
+          <div class="field__input-wrap">
+            <i class="fa-solid fa-calendar-check field__icon"></i>
+            <input type="date" id="checkout" name="checkout" />
+          </div>
+          <span class="field__error" id="checkoutError"></span>
+        </div>
+
+        <div class="field">
+          <label for="guests">Guests</label>
+          <div class="field__input-wrap">
+            <i class="fa-solid fa-user-group field__icon"></i>
+            <input
+              type="number"
+              id="guests"
+              name="guests"
+              placeholder="2 guests"
+              min="1"
+              max="20"
+            />
+          </div>
+          <span class="field__error" id="guestsError"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primary search-form__submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Search
+        </button>
+      </form>
+
+     
+      <p class="search-form__success" id="formSuccess">
+        <i class="fa-solid fa-circle-check"></i>
+        Looks good! Showing stays for your trip…
+      </p>
+    </div>
+  </section>
+
+  
+  <section class="destinations">
+    <div class="container">
+      <p class="section-eyebrow">Trending this month...</p>
+      <h2 class="section-title">Popular routes travelers are booking</h2>
+    </div>
+
+    <div class="destinations__track-wrap">
+      <div class="destinations__track" id="destinationsTrack">
+        <!-- Cards are duplicated via JS for seamless infinite scroll -->
+        <a href="#" class="dest-card">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Bali, Indonesia" />
+          <div class="dest-card__info">
+            <h3>Bali, Indonesia</h3>
+            <span>From ₹18,500</span>
+          </div>
+        </a>
+
+        <a href="#" class="dest-card">
+          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80" alt="Santorini, Greece" />
+          <div class="dest-card__info">
+            <h3>Santorini, Greece</h3>
+            <span>From ₹42,000</span>
+          </div>
+        </a>
+
+        <a href="#" class="dest-card">
+          <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=600&q=80" alt="Kyoto, Japan" />
+          <div class="dest-card__info">
+            <h3>Kyoto, Japan</h3>
+            <span>From ₹35,200</span>
+          </div>
+        </a>
+
+        <a href="#" class="dest-card">
+          <img src="https://images.unsplash.com/photo-1535139262971-c51845709a48?auto=format&fit=crop&w=600&q=80" alt="Dubai, UAE" />
+          <div class="dest-card__info">
+            <h3>Dubai, UAE</h3>
+            <span>From ₹28,900</span>
+          </div>
+        </a>
+
+        <a href="#" class="dest-card">
+          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80" alt="Manali, India" />
+          <div class="dest-card__info">
+            <h3>Manali, India</h3>
+            <span>From ₹9,200</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="features">
+    <div class="container">
+      <p class="section-eyebrow">Why Wanderly</p>
+      <h2 class="section-title">Booking made simple, start to finish</h2>
+
+      <div class="features__grid">
+        <div class="feature-card" data-animate="fade-up">
+          <div class="feature-card__icon"><i class="fa-solid fa-tags"></i></div>
+          <h3>Best price, guaranteed</h3>
+          <p>Find it cheaper elsewhere within 24 hours and we'll match it — no questions asked.</p>
+        </div>
+
+        <div class="feature-card" data-animate="fade-up" data-delay="1">
+          <div class="feature-card__icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <h3>Free cancellation</h3>
+          <p>Plans change. Most stays can be cancelled free of charge up to 48 hours before check-in.</p>
+        </div>
+
+        <div class="feature-card" data-animate="fade-up" data-delay="2">
+          <div class="feature-card__icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>24/7 support</h3>
+          <p>Real humans, real help — any time zone, any time of day, whenever you need us.</p>
+        </div>
+
+        <div class="feature-card" data-animate="fade-up" data-delay="3">
+          <div class="feature-card__icon"><i class="fa-solid fa-star"></i></div>
+          <h3>Verified reviews</h3>
+          <p>Every review comes from a traveler who actually stayed there. No fakes, no filters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-eyebrow">Loved by travelers</p>
+      <h2 class="section-title">What people say about Wanderly</h2>
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card" data-animate="fade-up">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"Booked a last-minute trip to Goa and the whole process took two minutes. Honestly didn't expect it to be this smooth."</p>
+          <div class="testimonial-card__author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Riya Sharma" />
+            <div>
+              <strong>Riya Sharma</strong>
+              <span>Mumbai, India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-animate="fade-up" data-delay="1">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"The free cancellation saved me when our dates shifted. Support replied within minutes on chat. Big fan."</p>
+          <div class="testimonial-card__author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Arjun Mehta" />
+            <div>
+              <strong>Arjun Mehta</strong>
+              <span>Bengaluru, India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-animate="fade-up" data-delay="2">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"Clean interface, real prices, no hidden charges at checkout. Wanderly is now my default for every trip."</p>
+          <div class="testimonial-card__author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="Sneha Kapoor" />
+            <div>
+              <strong>Sneha Kapoor</strong>
+              <span>Pune, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER / CTA BAND ============ -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Get fare-drop alerts in your inbox</h2>
+        <p>One email a week. No spam — just the deals worth packing a bag for.</p>
+      </div>
+      <form class="cta-band__form" id="newsletterForm" novalidate>
+        <input type="email" id="newsletterEmail" placeholder="you@example.com" />
+        <button type="submit" class="btn btn--secondary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="navbar__logo">
+          <i class="fa-solid fa-compass"></i>
+          <span>Wanderly</span>
+        </a>
+        <p>Your trip, planned right.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Follow</h4>
+        <div class="footer__socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer__bottom">© 2026 Wanderly. Made for learning &amp; portfolio purposes.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

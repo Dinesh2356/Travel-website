@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Wanderly for travel bookings, custom packages, and 24/7 support. Reach us by phone, email, or our online form." />
+  <title>Contact Us — Wanderly Travel</title>
+
+  <!-- Google Fonts: Fraunces (headline) + Inter (body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- style.css = shared styles used on every page -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- contact.css = styles only for this page -->
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR (same on every page) ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <i class="fa-solid fa-compass"></i>
+        <span>Wanderly</span>
+      </a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact Us</a>
+      </nav>
+
+      <a href="#contactForm" class="btn btn--primary navbar__cta">Plan a Trip</a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ 1. HERO SECTION (with small quick-contact form) ============ -->
+  <section class="contact-hero">
+    <div class="contact-hero__bg"></div>
+    <div class="contact-hero__overlay"></div>
+
+    <div class="container contact-hero__grid">
+
+      <div class="contact-hero__text">
+        <p class="hero__eyebrow" data-animate="fade-up">Get in touch</p>
+        <h1 class="contact-hero__title" data-animate="fade-up" data-delay="1">Contact Us</h1>
+        <p class="contact-hero__subtitle" data-animate="fade-up" data-delay="2">
+          We're here to help you plan your perfect journey. Reach out to us anytime.
+        </p>
+
+        <ul class="contact-hero__highlights" data-animate="fade-up" data-delay="3">
+          <li><i class="fa-solid fa-check"></i> Reply within 4 hours</li>
+          <li><i class="fa-solid fa-check"></i> 24/7 live chat support</li>
+          <li><i class="fa-solid fa-check"></i> No hidden charges, ever</li>
+        </ul>
+      </div>
+
+      <!-- SMALL QUICK-CONTACT FORM, lives in the hero, glassmorphism card -->
+      <div class="quick-form-card" data-animate="fade-up" data-delay="2">
+        <h3>Quick Message</h3>
+        <p class="quick-form-card__hint">Short on time? Send a quick note and we'll call you back.</p>
+
+          <form id="quickForm" class="quick-form" novalidate method="get">
+            <div class="field">
+              <label for="FirstName" > Name </label>
+              <input type="text" id="Firstname"  name="FName" placeholder="Your name" autocomplete="off" />
+              <span class="field__error" id="quickNameError"></span>
+            </div>
+
+          <div class="field">
+            <label for="Email" > Email or Phone </label>
+            <input type="text" id="Email" name="Contact" placeholder="Email or 10-digit phone" autocomplete="off" />
+            <span class="field__error" id="quickContactError"></span>
+          </div>
+
+          <div class="field">
+            <label for="Message" > Message </label>
+            <textarea id="Message" name="Message" rows="2" placeholder="How can we help?"></textarea>
+            <span class="field__error" id="quickMessageError"></span>
+          </div>
+
+          <button type="button" class="btn btn--primary quick-form__submit" onclick="SendQuickMessage()">
+            <i class="fa-solid fa-paper-plane"></i> Send Quick Message
+          </button>
+         
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+ <script>
+function SendQuickMessage() {
+
+    
+
+    var firstName = document.getElementById("Firstname").value;
+    var email = document.getElementById("Email").value;
+    var message = document.getElementById("Message").value;
+
+    console.log(firstName);
+    console.log(email);
+    console.log(message);
+
+    window.location.href =
+        "thankyou.html?name=" + firstName+
+        "&email=" + email +
+        "&message=" + message;
+}
+</script>
+  <!-- ============ 2. CONTACT INFORMATION CARDS ============ -->
+  <section class="info-cards">
+    <div class="container">
+      <div class="info-cards__grid">
+
+        <div class="info-card" data-animate="fade-up">
+          <div class="info-card__icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h3>Office Address</h3>
+          <p>123 Travel Street,<br />Mumbai, Maharashtra,<br />India – 400001</p>
+        </div>
+
+        <div class="info-card" data-animate="fade-up" data-delay="1">
+          <div class="info-card__icon"><i class="fa-solid fa-phone"></i></div>
+          <h3>Phone</h3>
+          <p>+91 98765 43210</p>
+        </div>
+
+        <div class="info-card" data-animate="fade-up" data-delay="2">
+          <div class="info-card__icon"><i class="fa-solid fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p>info@travelworld.com</p>
+        </div>
+
+        <div class="info-card" data-animate="fade-up" data-delay="3">
+          <div class="info-card__icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Working Hours</h3>
+          <p>
+            Mon – Fri: 9 AM – 7 PM<br />
+            Saturday: 10 AM – 5 PM<br />
+            Sunday: Closed
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. FULL CONTACT FORM SECTION ============ -->
+  <section class="contact-main" id="contactForm">
+    <div class="container contact-main__grid">
+
+      <div class="contact-form-card" data-animate="fade-up">
+        <p class="section-eyebrow">Send a detailed message</p>
+        <h2 class="section-title" style="margin-bottom: 28px;">Tell us about your trip</h2>
+
+        <form id="fullContactForm" class="contact-form" method="get">
+
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <div class="field__input-wrap">
+              <i class="fa-solid fa-user field__icon"></i>
+              <input type="text" id="fullName1" name="fullName" placeholder="e.g. Riya Sharma" autocomplete="off" required />
+            </div>
+            <span class="field__error" id="fullNameError"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <div class="field__input-wrap">
+              <i class="fa-solid fa-envelope field__icon"></i>
+              <input type="email" id="email1" name="email" placeholder="you@example.com" autocomplete="off" />
+            </div>
+            <span class="field__error" id="emailError"></span>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <div class="field__input-wrap">
+              <i class="fa-solid fa-phone field__icon"></i>
+              <input type="tel" id="phone1" name="phone" placeholder="10-digit mobile number" autocomplete="off" />
+            </div>
+            <span class="field__error" id="phoneError"></span>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <div class="field__input-wrap">
+              <i class="fa-solid fa-tag field__icon"></i>
+              <select id="subject1" name="subject">
+                <option value="">Select a topic</option>
+                <option value="Booking Issue">Booking Issue</option>
+                <option value="Refund / Cancellation">Refund / Cancellation</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <span class="field__error" id="subjectError"></span>
+          </div>
+
+          <div class="field field--full">
+            <label for="destination">Destination Interested In</label>
+            <div class="field__input-wrap">
+              <i class="fa-solid fa-map-location-dot field__icon"></i>
+              <input type="text" id="destination1" name="destination" placeholder="e.g. Bali, Santorini, Manali..." autocomplete="off" />
+            </div>
+            <span class="field__error" id="destinationError"></span>
+          </div>
+
+          <div class="field field--full">
+            <label for="message">Message</label>
+            <div class="field__input-wrap field__input-wrap--textarea">
+              <i class="fa-solid fa-message field__icon field__icon--top"></i>
+              <textarea id="message1" name="message" rows="5" placeholder="Tell us a bit more..."></textarea>
+            </div>
+            <span class="field__error" id="messageError"></span>
+          </div>
+
+          <button type="button" class="btn btn--primary contact-form__submit" onclick="SendMessage()">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+
+
+<script>
+
+          
+    function SendMessage() {
+
+    
+    const fullName = document.getElementById("fullName1").value.trim();
+    const email = document.getElementById("email1").value.trim();
+    const phone = document.getElementById("phone1").value.trim();
+    const subject = document.getElementById("subject1").value;
+    const destination = document.getElementById("destination1").value.trim();
+    const message = document.getElementById("message1").value.trim();
+
+   
+    const fullNameError = document.getElementById("fullNameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const subjectError = document.getElementById("subjectError");
+    const destinationError = document.getElementById("destinationError");
+    const messageError = document.getElementById("messageError");
+
+    // Clear Previous Errors
+    fullNameError.textContent = "";
+    emailError.textContent = "";
+    phoneError.textContent = "";
+    subjectError.textContent = "";
+    destinationError.textContent = "";
+    messageError.textContent = "";
+
+    let isValid = true;
+
+    // Full Name Validation
+    if (fullName === "") {
+        fullNameError.textContent = "Please enter your full name";
+        isValid = false;
+    } else if (fullName.length < 3) {
+        fullNameError.textContent = "Name must be at least 3 characters";
+        isValid = false;
+    }
+
+    // Email Validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        emailError.textContent = "Please enter your email";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        emailError.textContent = "Enter a valid email address";
+        isValid = false;
+    }
+
+    // Phone Validation
+    const phonePattern = /^[0-9]{10}$/;
+
+    if (phone === "") {
+        phoneError.textContent = "Please enter your phone number";
+        isValid = false;
+    } else if (!phonePattern.test(phone)) {
+        phoneError.textContent = "Phone number must be 10 digits";
+        isValid = false;
+    }
+
+    // Subject Validation
+    if (subject === "") {
+        subjectError.textContent = "Please select a subject";
+        isValid = false;
+    }
+
+    // Destination Validation
+    if (destination === "") {
+        destinationError.textContent = "Please enter a destination";
+        isValid = false;
+    }
+
+    // Message Validation
+    if (message === "") {
+        messageError.textContent = "Please enter a message";
+        isValid = false;
+    } else if (message.length < 10) {
+        messageError.textContent = "Message must be at least 10 characters";
+        isValid = false;
+    }
+
+    // Stop if invalid
+    if (!isValid) {
+        return false;
+    }
+
+    // Redirect to Thank You Page
+    window.location.href =
+        "thankyou.html?FullName=" + encodeURIComponent(fullName) +
+        "&Email=" + encodeURIComponent(email) +
+        "&Phone=" + encodeURIComponent(phone) +
+        "&Subject=" + encodeURIComponent(subject) +
+        "&Destination=" + encodeURIComponent(destination) +
+        "&Message=" + encodeURIComponent(message);
+
+    return true;
+}
+
+      </script>
+
+      <!-- side socials panel -->
+      <div class="contact-info" data-animate="fade-up" data-delay="1">
+        <div class="contact-info__card">
+          <div class="contact-info__icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <h4>Live Chat</h4>
+            <p>Available 24/7 on our app</p>
+          </div>
+        </div>
+
+        <div class="contact-info__card">
+          <div class="contact-info__icon"><i class="fa-solid fa-circle-question"></i></div>
+          <div>
+            <h4>Need quick answers?</h4>
+            <p>Check our FAQ section below before reaching out.</p>
+          </div>
+        </div>
+
+        <div class="contact-info__socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 4. WHY CONTACT US ============ -->
+  <section class="why-contact">
+    <div class="container">
+      <p class="section-eyebrow">Why reach out to us</p>
+      <h2 class="section-title">Why Contact Us</h2>
+
+      <div class="why-contact__grid">
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-card__icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>24/7 Travel Assistance</h3>
+          <p>Real support agents, any hour of the day, for any stage of your trip.</p>
+        </div>
+
+        <div class="why-card" data-animate="fade-up" data-delay="1">
+          <div class="why-card__icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3>Customized Travel Packages</h3>
+          <p>Tell us your budget and dates — we'll build an itinerary around them.</p>
+        </div>
+
+        <div class="why-card" data-animate="fade-up" data-delay="2">
+          <div class="why-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Secure Bookings</h3>
+          <p>Encrypted payments and verified partners, every single time you book.</p>
+        </div>
+
+        <div class="why-card" data-animate="fade-up" data-delay="3">
+          <div class="why-card__icon"><i class="fa-solid fa-compass"></i></div>
+          <h3>Expert Travel Guidance</h3>
+          <p>Our team has visited the places they recommend — real advice, not guesswork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. FAQ ============ -->
+  <section class="faq">
+    <div class="container">
+      <p class="section-eyebrow">Quick answers</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq__list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-item__question">
+            How can I book a trip?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>Use the search form on our homepage to find a stay, or fill the contact form above and our team will book it for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Can I customize my travel package?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes — tell us your destination, dates, and budget in the form above, and we'll tailor a package to match.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Do you offer group tours?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes, we run curated group tours for both small friend groups and larger corporate travel needs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            What payment methods do you accept?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>We accept all major credit/debit cards, UPI, net banking, and popular digital wallets.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Can I cancel my booking?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>Most bookings offer free cancellation up to 48 hours before check-in. Check your booking confirmation for specific terms.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Do you provide visa assistance?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes, our team can guide you through visa requirements and documentation for most international destinations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. MAP ============ -->
+  <section class="map-section" data-animate="fade-up">
+    <iframe
+      src="https://maps.google.com/maps?q=Mumbai%2C%20Maharashtra%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Wanderly office location map">
+    </iframe>
+  </section>
+
+  <!-- ============ 7. CALL TO ACTION ============ -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Ready For Your Next Adventure?</h2>
+        <p>Let our travel experts help you plan an unforgettable journey.</p>
+      </div>
+      <a href="services.html" class="btn btn--secondary">Explore Packages</a>
+    </div>
+  </section>
+
+  <!-- ============ 8. FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo">
+          <i class="fa-solid fa-compass"></i>
+          <span>Wanderly</span>
+        </a>
+        <p>Your trip, planned right.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Popular Destinations</h4>
+        <a href="#">Bali, Indonesia</a>
+        <a href="#">Santorini, Greece</a>
+        <a href="#">Kyoto, Japan</a>
+        <a href="#">Dubai, UAE</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+        <a href="mailto:info@travelworld.com"><i class="fa-solid fa-envelope"></i> info@travelworld.com</a>
+        <div class="footer__socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer__bottom">© 2026 Wanderly. Made for learning &amp; portfolio purposes.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
